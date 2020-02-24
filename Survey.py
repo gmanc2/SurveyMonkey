@@ -18,7 +18,7 @@ headers = {
 }
 
 HOST = "https://api.surveymonkey.net"
-SURVEY_DETAIL_ENDPOINT = "/v3/surveys/SURVEYID/details"
+SURVEY_DETAIL_ENDPOINT = "/v3/surveys/277817842/details"
 uri = "%s%s" % (HOST, SURVEY_DETAIL_ENDPOINT)
 
 response = client.get(uri, headers=headers)
@@ -27,16 +27,8 @@ survey_data = response.json()
 
 response_json = response.json()
 answer_dict = {}
-for page in survey_data['pages']:
-    for question in page['questions']:
 
-        # Rows, choices, other, and cols all make up the possible answers
-        answers = question['answers'].get('rows', [])\
-            + question['answers'].get('choices', [])\
-            + question['answers'].get('other', [])\
-            + question['answers'].get('cols', [])
+with open('data.json', 'w') as df:
+    json.dump(response_json, df)
 
-        for answer in answers:
-            answer_dict[answer['id']] = answer
-
-print(response_json['data'])
+print(answer_dict)
