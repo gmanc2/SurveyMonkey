@@ -8,7 +8,7 @@ import json
 """
 
 client = requests.session()
-Acctkn = 'vh3yCNiDUqVnfioIVDTZDVePjwGeBIUlr..U-zubCTFvdUl4vWiUUUWgZVgoycoJ474NvFW-qSTD-s2XQ5KNt1GwH1gjjkFFkp2MGSbkHdi3fW0Vdmcfq5CpaGukTzM3'
+Acctkn = 'Redacted'
 
 client = requests.session()
 
